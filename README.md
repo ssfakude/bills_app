@@ -1,12 +1,12 @@
 # bills_app
 
-A new Flutter project.
+Bills Payment App.
 
-## Getting Started
+## About the Application
 
-This project is a starting point for a Flutter application.
+This project is a Flutter application. Allows user to pay all his/her bills in one single platform
 
-A few resources to get you started if this is your first Flutter project:
+ A few resources used to getting started with the Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
