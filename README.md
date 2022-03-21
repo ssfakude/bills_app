@@ -3,7 +3,7 @@
 Bills Payment App.
 
 
-<img src="Screenshot.png" width="100" height="100">
+<img src="Screenshot.png" width="300" height="550">
 
 ## About the Application
 
