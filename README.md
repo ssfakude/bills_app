@@ -2,7 +2,8 @@
 
 Bills Payment App.
 
-![Screenshot](Screenshot.png =250x250))
+
+<img src="Screenshot.png" width="100" height="100">
 
 ## About the Application
 
