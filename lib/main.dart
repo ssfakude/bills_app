@@ -1,5 +1,4 @@
 import 'package:bills_app/pages/my_home_page.dart';
-import 'package:bills_app/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.red,
       ),
-      home: PaymentPage(),
+      home: MyHomePage(),
     );
   }
 }
