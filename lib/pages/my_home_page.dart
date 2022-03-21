@@ -1,9 +1,11 @@
 import 'package:bills_app/component/colors.dart';
+import 'package:bills_app/pages/payment_page.dart';
 import 'package:bills_app/widgets/buttons.datt.dart';
 import 'package:bills_app/widgets/text_size.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import '../widgets/large_button.dart';
 
@@ -345,7 +347,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Positioned(
       bottom: 10,
 
-        child: AppLargeButton(text: 'Pay all bills',textColor: Colors.white,));
+        child: AppLargeButton(text: 'Pay all bills',textColor: Colors.white,onTap: (){Get.to(()=>PaymentPage());},));
   }
   _textContainer(){
     return Stack(
