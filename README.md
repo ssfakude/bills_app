@@ -2,7 +2,7 @@
 
 Bills Payment App.
 
-![Screenshot](Screenshot.png)
+![Screenshot](Screenshot.png =250x250))
 
 ## About the Application
 
