@@ -2,6 +2,9 @@
 
 Bills Payment App.
 
+
+<img src="Screenshot.png" width="300" height="650">
+
 ## About the Application
 
 This project is a Flutter application. Allows user to pay all his/her bills in one single platform
