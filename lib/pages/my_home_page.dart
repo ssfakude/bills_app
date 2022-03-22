@@ -1,4 +1,5 @@
 import 'package:bills_app/component/colors.dart';
+import 'package:bills_app/controllers/data_controllers.dart';
 import 'package:bills_app/pages/payment_page.dart';
 import 'package:bills_app/widgets/buttons.datt.dart';
 import 'package:bills_app/widgets/text_size.dart';
@@ -17,8 +18,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final DataController _controller = Get.put(DataController());
   @override
   Widget build(BuildContext context) {
+    print(_controller.list);
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -28,7 +31,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: [
             _headSection(),
-            _listBills(),
+           Obx((){
+              if(_controller.loading == false){
+                return Center(
+                  child: Container(
+
+                    height:100 ,
+                      width: 100,
+
+                      child: CircularProgressIndicator( valueColor:AlwaysStoppedAnimation<Color>(AppColor.mainColor),)
+                  ),
+
+                );
+              }
+              else{
+              return  _listBills();
+              }
+            }),
             _payButton(),
             _textContainer(),
           ],
@@ -40,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   _headSection(){
     return Container(
-      height: 200,
+      height: MediaQuery.of(context).size.height*0.3,
+
 
       child: Stack(
         children: [
@@ -54,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   _buttonContainer(){
     return Positioned(
-        bottom: 15,
-        right: 53,
+        bottom: MediaQuery.of(context).size.height*0.02,
+        right: MediaQuery.of(context).size.width*0.13,
         child: GestureDetector(
           onTap: (){
             showModalBottomSheet<dynamic>(
@@ -65,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 context: context, builder: (BuildContext bc){
               return Container(
-                height: MediaQuery.of(context).size.height-123,
+                height: MediaQuery.of(context).size.height*0.8,
                 child: Stack(
                   children: [
                     Positioned(
@@ -73,16 +93,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Container(
                           color: Color(0xFFeef1f4).withOpacity(0.7),
                           width: MediaQuery.of(context).size.height,
-                          height: MediaQuery.of(context).size.height-186,
+                          height: MediaQuery.of(context).size.height*0.7,
 
                     )),
                     Positioned(
-                      right: 53,
+                      right: MediaQuery.of(context).size.width*0.13,
                         top: 0,
                         child: Container(
                           padding: const EdgeInsets.only(top: 10, bottom: 25),
-                        width: 60,
-                          height: 250,
+                        width: MediaQuery.of(context).size.width*0.15,
+                          height: MediaQuery.of(context).size.height*0.32,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
                             color: AppColor.mainColor
@@ -139,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
     bottom: 10,
       left: 0,
       child: Container(
-        height: 190,
+        height: MediaQuery.of(context).size.height*0.3,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -156,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _curveImageContainer(){
     return  Positioned(
       left: 0,
-        right: -2,
+        right: 0,
         bottom:10,
         child: Container(
           height: MediaQuery.of(context).size.height*0.13,
@@ -174,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   _listBills(){
     return Positioned(
-      top: 185,
+      top: MediaQuery.of(context).size.height*0.3,
         left: 0,
         right: 0,
         bottom: 0,
@@ -182,12 +202,13 @@ class _MyHomePageState extends State<MyHomePage> {
           removeTop: true,
           context: context,
           child: ListView.builder(
-            itemCount: 10,
+
+            itemCount: _controller.list.length,
             itemBuilder: (_, index){
               return Container(
                 margin: const EdgeInsets.only(top: 20, right: 20),
-                height: 130,
-                width: MediaQuery.of(context).size.width-20,
+                height:  MediaQuery.of(context).size.height*0.165,
+                width: MediaQuery.of(context).size.width*0.13,
 
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -210,6 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
@@ -226,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: AssetImage(
-                                          "images/brand1.png"
+                                          _controller.list[index]["img"]
                                       )
                                   ),
 
@@ -240,7 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "KenGen Power",
+                                 _controller.list[index]["brand"],
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w700,
@@ -249,7 +271,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    "ID: 512",
+                                    "ID: 24354",
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w700,
@@ -262,7 +284,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
 
-                          SizedText(text: "Auto pay on 24th of June", color: AppColor.green),
+                          SizedText(text:  _controller.list[index]["more"], color: AppColor.green),
                           SizedBox(height: 5,)
                         ],
                       ),
@@ -271,26 +293,34 @@ class _MyHomePageState extends State<MyHomePage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                width: 80,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    color: AppColor.selectBackground
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Select",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: AppColor.selectColor
+                              GestureDetector(
+                                onTap: (){
+                                _controller.list[index]["status"]= !_controller.list[index]["status"];// update with opposite current value
+                                print( _controller.list[index]["status"]);
+                                _controller.list.refresh();
+                                print(_controller.newList.length);
+                                },
+                                child: Container(
+                                  width: 80,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: _controller.list[index]["status"]== false? AppColor.selectBackground:AppColor.green
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Select",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: _controller.list[index]["status"]==false? AppColor.selectColor:Colors.white
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                               Expanded(child: Container()),
                               Text(
-                                "\R745.00",
+                                "\R"+_controller.list[index]["due"],
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight:FontWeight.w900 ,
@@ -298,7 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                               Text(
-                                "Due in 3 days",
+                               "Due in 3 days",
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight:FontWeight.w700 ,

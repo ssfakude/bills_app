@@ -1,0 +1,36 @@
+[
+
+  {
+  "brand": "KenGen Power",
+    "date" : "06-05-22",
+    "status": false,
+    "due": "745.00",
+    "more": "Pay before ",
+    "img": "images/brand1.png"
+  },
+
+  {
+    "brand": "Electricity Gezi",
+    "date" : "06-05-22",
+    "status": false,
+    "due": "500.00",
+    "more": "You must Pay now",
+    "img": "images/brand3.png"
+  },
+  {
+    "brand": "Water Bill",
+    "date" : "06-05-22",
+    "status": false,
+    "due": "150.00",
+    "more": "Pay before",
+    "img": "images/brand2.png"
+  },
+  {
+    "brand": "Wifi 5g",
+    "date" : "06-05-22",
+    "status": false,
+    "due": "543.00",
+    "more": "Due in 2 weeks",
+    "img": "images/brand3.png"
+  }
+]
