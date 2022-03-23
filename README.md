@@ -6,9 +6,9 @@ Bills Payment App.
 
 
 <p float="left">
-  <img src="Screenshot1.png" width="300" height="650">
-   <img src="Screenshot2.png" width="300" height="650">
-   <img src="Screenshot3.png" width="300" height="650">
+  <img src="Screenshot1.png" width="200" height="550">
+   <img src="Screenshot2.png" width="200" height="550">
+   <img src="Screenshot3.png" width="200" height="550">
 </p>
 
 
