@@ -348,27 +348,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                   topLeft: Radius.circular(30),
                                   bottomRight: Radius.circular(30)
                               ),
-
-
                             ),
                           )
-
-
                         ],
                       )
-
                     ],
                   ),
-
-
                 ) ,
               );
             },
-
           ),
         ),
-
-
     );
 
   }

@@ -5,32 +5,25 @@
     "date" : "06-05-22",
     "status": false,
     "due": "745.00",
-    "more": "Pay before ",
+    "more": "Pay before Month end",
     "img": "images/brand1.png"
   },
 
   {
-    "brand": "Electricity Gezi",
+    "brand": "Property Xero",
     "date" : "06-05-22",
     "status": false,
     "due": "500.00",
     "more": "You must Pay now",
-    "img": "images/brand3.png"
+    "img": "images/brand7.jpg"
   },
   {
-    "brand": "Water Bill",
+    "brand": "Total Plus",
     "date" : "06-05-22",
     "status": false,
-    "due": "150.00",
-    "more": "Pay before",
+    "due": "1 850.00",
+    "more": "Pay before month end",
     "img": "images/brand2.png"
-  },
-  {
-    "brand": "Wifi 5g",
-    "date" : "06-05-22",
-    "status": false,
-    "due": "543.00",
-    "more": "Due in 2 weeks",
-    "img": "images/brand3.png"
   }
+
 ]

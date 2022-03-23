@@ -159,7 +159,7 @@ class PaymentPage extends StatelessWidget {
                   ),
                   SizedBox(height: h*0.01,),
                   Text(
-                    "R4565.00",
+                    "R1345.00",
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w600,
