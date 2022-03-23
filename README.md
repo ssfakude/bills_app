@@ -3,12 +3,12 @@
 Bills Payment App.
 
 
-<img src="Screenshot.png" width="300" height="650">
+
 
 <p float="left">
   <img src="Screenshot1.png" width="300" height="650">
-  <img src="/Screenshot2.png" width="100" /> 
-  <img src="/img3.png" width="100" />
+   <img src="Screenshot2.png" width="300" height="650">
+   <img src="Screenshot3.png" width="300" height="650">
 </p>
 
 
