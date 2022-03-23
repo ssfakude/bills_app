@@ -5,6 +5,13 @@ Bills Payment App.
 
 <img src="Screenshot.png" width="300" height="650">
 
+<p float="left">
+  <img src="Screenshot1.png" width="300" height="650">
+  <img src="/Screenshot2.png" width="100" /> 
+  <img src="/img3.png" width="100" />
+</p>
+
+
 ## About the Application
 
 This project is a Flutter application. Allows user to pay all his/her bills in one single platform
