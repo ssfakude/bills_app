@@ -14,7 +14,7 @@ Bills Payment App.
 
 ## About the Application
 
-This project is a Flutter application. Allows user to pay all his/her bills in one single platform
+This project is a Flutter application. Allows user to pay all bills in one single platform
 
  A few resources used to getting started with the Flutter project:
 
